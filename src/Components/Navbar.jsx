@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FaBell } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
-import profile2 from "../assets/ProfilePicture_2.png";
-
+import { ProfileContext } from "../Context/ProfileContext";
 const Navbar = () => {
+  const { profile } = useContext(ProfileContext);
   return (
     <div className="navbar-wrapper">
       <div className="logo">
-        <Link to={"/home"} style={{ textDecoration: "none" }}>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
           <h1>Netflix</h1>
         </Link>
       </div>
@@ -29,9 +29,22 @@ const Navbar = () => {
       </div>
       <div className="profile-info-wrapper">
         <IoSearch color="#fff" size={20} />
-        <FaBell color="#fff" size={20} />
-        <img src={profile2} alt="profile" width={30} height={30} />
-        <IoMdArrowDropdown color="#fff" size={20} />
+        <FaBell color="#fff" size={20} className="notification-icon" />
+        <img
+          src={profile?.img}
+          alt="profile"
+          width={30}
+          height={30}
+          className="profile-pic"
+        />
+        <span className="profile-name" style={{ color: "#fff" }}>
+          {profile.name}
+        </span>
+        <IoMdArrowDropdown
+          color="#fff"
+          size={20}
+          className="info-dropdown-icon"
+        />
       </div>
     </div>
   );

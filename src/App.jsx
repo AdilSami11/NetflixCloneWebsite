@@ -1,8 +1,7 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
 import ProfilesPage from "./Pages/ProfilesPage";
 import MainNetflixPage from "./Pages/MainNetflixPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>

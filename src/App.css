@@ -11,6 +11,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #111;
 }
 
 .container {
@@ -47,6 +48,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  /* background-color: yellow; */
 }
 
 /* profiles-main-wrapper */
@@ -110,6 +112,115 @@ body {
   font-weight: 500;
 }
 
+/* netflix main page styling */
+
+.banner-skeleton {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main-banner-wrapper {
+  width: 100%;
+  min-height: 80vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.main-banner-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  width: 100%;
+  margin-left: 30px;
+}
+.banner-content h1 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+.banner-content p {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+  color: #ffffffdf;
+  letter-spacing: 1px;
+}
+
+.banner-btns {
+  display: flex;
+  gap: 10px;
+}
+.banner-btns button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+}
+.banner-btns button:nth-child(1) {
+  background-color: #fff;
+  color: #000000;
+  transition: ease 0.2s;
+  cursor: pointer;
+}
+.banner-btns button:nth-child(1):hover {
+  transform: scale(1.05);
+}
+
+.banner-btns button:nth-child(2) {
+  background-color: #ffffff53;
+  color: #ffffffa9;
+  transition: ease 0.2s;
+  cursor: pointer;
+}
+
+.banner-btns button:nth-child(2):hover {
+  transform: scale(1.05);
+}
 @media screen and (max-width: 768px) {
   .profiles-main-wrapper {
     padding: 20px 0px;
@@ -137,5 +248,23 @@ body {
   .profile-img-wrap {
     width: 150px;
     height: 150px;
+  }
+  .nav-links-wrapper {
+    display: none;
+  }
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  .profile-info-wrapper {
+    gap: 20px;
+  }
+  .notification-icon,
+  .info-dropdown-icon,
+  .profile-name {
+    display: none;
+  }
+  .profile-pic {
+    width: 40px;
+    height: 40px;
   }
 }
