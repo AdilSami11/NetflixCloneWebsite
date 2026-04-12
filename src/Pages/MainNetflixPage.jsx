@@ -1,9 +1,12 @@
 import React from "react";
-
+import Navbar from "../Components/Navbar";
 const MainNetflixPage = () => {
   return (
     <div>
-      <h1>mainpage</h1>
+      <>
+        <Navbar />
+        
+      </>
     </div>
   );
 };

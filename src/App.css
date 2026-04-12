@@ -28,28 +28,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 30px;
 }
 
 .logo h1 {
   color: #e50914;
 }
 
-.btn-subscribe button {
-  background-color: #e50914;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.profile-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 /* profiles-main-wrapper */
 
 .profiles-main-wrapper {
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: #000000;
-  padding: 100px 0;
+  padding: 180px 0;
 }
 
 /* profiles-title */
@@ -106,10 +112,10 @@ body {
 
 @media screen and (max-width: 768px) {
   .profiles-main-wrapper {
-    padding: 50px 0px;
+    padding: 20px 0px;
   }
   .profiles-title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .profiles-title h2 {
     text-align: center;
