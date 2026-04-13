@@ -314,7 +314,7 @@ body {
 
 @media screen and (max-width: 380px) {
   .profiles-main-wrapper {
-    padding: 60px 0px;
+    padding: 70px 0px;
   }
   .profiles-title {
     margin-bottom: 20px;
@@ -325,7 +325,7 @@ body {
   }
   .profile-cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
+    padding: 15px;
     gap: 20px;
   }
   .profile-card {
@@ -334,8 +334,8 @@ body {
     margin: 0 auto;
   }
   .profile-img-wrap {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
   }
   .movies_row_wrapper {
     margin-left: 0px;
@@ -362,5 +362,10 @@ body {
     padding: 10px 20px;
     border-radius: 15px;
     font-weight: 600;
+  }
+
+  .movies_row_wrapper img {
+    max-width: 170px;
+    border-radius: 10px;
   }
 }
