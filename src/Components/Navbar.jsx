@@ -17,11 +17,11 @@ const Navbar = () => {
         <Link to="/home" style={{ textDecoration: "none", color: "#fff" }}>
           Home
         </Link>
-        <Link to="/tv-shows" style={{ textDecoration: "none", color: "#fff" }}>
-          TV Shows
-        </Link>
         <Link to="/movies" style={{ textDecoration: "none", color: "#fff" }}>
           Movies
+        </Link>
+        <Link to="/tv-shows" style={{ textDecoration: "none", color: "#fff" }}>
+          TV Shows
         </Link>
         <Link to="/latest" style={{ textDecoration: "none", color: "#fff" }}>
           New & Popular
