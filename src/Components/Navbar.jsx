@@ -5,7 +5,9 @@ import { FaBell } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { ProfileContext } from "../Context/ProfileContext";
 const Navbar = () => {
-  const { profile } = useContext(ProfileContext);
+  const context = useContext(ProfileContext);
+  const profile = context?.profile;
+
   return (
     <div className="navbar-wrapper">
       <div className="logo">
@@ -38,7 +40,7 @@ const Navbar = () => {
           className="profile-pic"
         />
         <span className="profile-name" style={{ color: "#fff" }}>
-          {profile.name}
+          {profile?.name || "Guest"}
         </span>
         <IoMdArrowDropdown
           color="#fff"
