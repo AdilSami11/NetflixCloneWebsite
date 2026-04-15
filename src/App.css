@@ -304,6 +304,12 @@ body {
   transform: scale(0.9);
 }
 
+/* movies-main-wrapper */
+.movie-details-main-wrapper {
+  min-height: 90vh;
+  background-color: #51191c;
+}
+
 @media screen and (max-width: 768px) {
   .profiles-main-wrapper {
     padding: 20px 0px;
