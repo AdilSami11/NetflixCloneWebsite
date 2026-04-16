@@ -26,7 +26,7 @@ const AllMoviesPage = () => {
       <Navbar />
       <div className="movies-main-wrapper">
         {loader ? (
-          <h1 color="#fff">Laoding</h1>
+          <h1 style={{ color: "#fff", textAlign: "center" }}>Laoding</h1>
         ) : (
           <div>
             <div className="movies--page--title">

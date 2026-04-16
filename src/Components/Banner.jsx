@@ -2,10 +2,11 @@ import { fetchPopularMovies } from "../Api/tmdb";
 import { useState, useEffect } from "react";
 import { IoIosPlay } from "react-icons/io";
 import { CiCircleAlert } from "react-icons/ci";
-
+import { useNavigate } from "react-router-dom";
 const Banner = () => {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -56,7 +57,11 @@ const Banner = () => {
               <IoIosPlay size={20} />
               Play
             </button>
-            <button>
+            <button
+              onClick={() => {
+                navigate(`/movie/${movie.id}`);
+              }}
+            >
               <CiCircleAlert size={20} />
               More Info
             </button>
