@@ -85,3 +85,18 @@ export const AllMovies = async (page = 1) => {
     return [];
   }
 };
+
+// All Tv Series:
+export const AllTVSeries = async (page = 1) => {
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&page=${page}`,
+    );
+
+    const data = await res.json();
+    return data.results;
+  } catch (error) {
+    console.error("Error fetching TV Series:", error);
+    return [];
+  }
+};
