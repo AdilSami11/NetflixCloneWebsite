@@ -87,10 +87,10 @@ export const AllMovies = async (page = 1) => {
 };
 
 // All Tv Series:
-export const AllTVSeries = async (page = 1) => {
+export const AllTVSeries = async (page = 1, sortBy = "popularity.desc") => {
   try {
     const res = await fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&page=${page}`,
+      `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=${sortBy}&page=${page}`,
     );
 
     const data = await res.json();

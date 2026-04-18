@@ -1,39 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import { AllTVSeries } from "../Api/tmdb";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 const TvShowsPage = () => {
   const [shows, setShows] = useState([]);
   const [page, setPage] = useState(1);
   const [loader, setLoader] = useState(true);
+  const [sortBy, setSortBy] = useState("popularity.desc");
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoader(true);
       try {
-        const data = await AllTVSeries(page);
+        setLoader(true);
+
+        const data = await AllTVSeries(page, sortBy);
         setShows((prev) => [...prev, ...data]);
+
         setLoader(false);
       } catch (error) {
         console.error(error);
-        setLoader(true);
+        setLoader(false);
       }
     };
+
     fetchData();
-  }, [page]);
+  }, [page, sortBy]);
+
+  // reset when filter changes
+  useEffect(() => {
+    setShows([]);
+    setPage(1);
+  }, [sortBy]);
+
   return (
     <>
       <Navbar />
+
       <div className="main-tv-shows-wrapper">
-        {loader ? (
-          <h1 style={{ color: "#fff", textAlign: "center" }}>Loading....</h1>
+        <div className="sorting-wrapper">
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <option value="popularity.desc">Most Popular</option>
+            <option value="vote_average.desc">Top Rated</option>
+            <option value="first_air_date.desc">Newest</option>
+          </select>
+        </div>
+        {loader && shows.length === 0 ? (
+          <h1 style={{ color: "#fff", textAlign: "center" }}>Loading...</h1>
         ) : (
           <>
             <div className="shows-title-wrapper">
-              <h1>Tv Shows</h1>
+              <h1>TV Shows</h1>
             </div>
             <div className="container">
               <div className="tv-shows-cards-wrapper">
@@ -46,6 +65,7 @@ const TvShowsPage = () => {
                   />
                 ))}
               </div>
+
               <div className="load-more-btn">
                 <button onClick={() => setPage((prev) => prev + 1)}>
                   Load More
