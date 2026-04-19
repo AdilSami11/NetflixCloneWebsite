@@ -70,6 +70,47 @@ const TvShowDetailPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* show info Wrapper */}
+            <div className="show-info-wrapper">
+              <p>🎭Status : {show.status}</p>
+              <p>📅 First air date : {show.first_air_date}</p>
+              <p>📅 Last air date : {show.last_air_date}</p>
+              <p>🌍 Language : {show?.languages || "NuN"}</p>
+              <p>🏳️ Country : {show?.origin_country || "Not Available"}</p>
+            </div>
+            {/* poster + info wrapper */}
+            <div className="poster-info-wrapper">
+              <div className="poster-img-wrap">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
+                  alt={show.original_name}
+                />
+              </div>
+              <div className="poster-detail-wrap">
+                <div className="name__rating_wrap">
+                  <h2>{show.original_name}</h2>
+                  <p className="review-stars">
+                    ⭐ {show.vote_average?.toFixed(1)}
+                  </p>
+                </div>
+                <p className="show-overview">
+                  <strong>Overview:</strong> <br />
+                  {show.overview || "No description available for this show."}
+                </p>
+                <p className="seasons">Seasons : {show.number_of_seasons}</p>
+                <p className="episodes">Episodes : {show.number_of_episodes}</p>
+
+                {show.created_by?.length > 0 && (
+                  <p className="creator">
+                    <strong>Created by: </strong>{" "}
+                    {show.created_by
+                      ?.map((c) => c.name || "Not Available")
+                      .join(", ")}
+                  </p>
+                )}
+              </div>
+            </div>
           </>
         )}
       </div>
