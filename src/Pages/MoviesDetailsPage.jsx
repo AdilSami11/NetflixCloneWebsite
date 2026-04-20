@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Banner from "../Components/Banner";
 import { IoIosPlay } from "react-icons/io";
 import { RiMovie2AiLine } from "react-icons/ri";
+import DetailPoster from "../Components/DetailPoster";
 const MoviesDetailsPage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -62,6 +63,14 @@ const MoviesDetailsPage = () => {
               <p>📅 Release Date : {movie?.release_date || "..."}</p>
               <p>🔥Popularity : {movie?.popularity}</p>
             </div>
+            {/* poster wrapper */}
+            <DetailPoster
+              name={movie?.original_title}
+              posterBg={movie?.poster_path}
+              rating={movie?.vote_average?.toFixed(1)}
+              overview={movie?.overview}
+              status={movie?.status}
+            />
           </>
         )}
       </div>

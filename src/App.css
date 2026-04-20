@@ -401,7 +401,7 @@ body {
   padding: 6px 10px;
   border: none;
   border-radius: 10px;
-  background-color: #444;
+  background-color: #e50914;
   color: #fff;
 }
 
@@ -594,6 +594,8 @@ body {
 }
 .show-overview {
   font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: 300;
 }
 .seasons,
 .episodes {
@@ -605,7 +607,10 @@ body {
   font-size: 1.3rem;
   color: #fff;
 }
-
+.status {
+  font-size: 1.3rem;
+  color: #fff;
+}
 @media screen and (max-width: 768px) {
   .profiles-main-wrapper {
     padding: 20px 0px;
