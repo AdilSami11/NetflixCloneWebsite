@@ -1,12 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FaBell } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { FaTimes } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+
 import { ProfileContext } from "../Context/ProfileContext";
 const Navbar = () => {
   const context = useContext(ProfileContext);
   const profile = context?.profile;
+  const [menu, setMenu] = useState(false);
 
   return (
     <div className="navbar-wrapper">
@@ -15,17 +19,33 @@ const Navbar = () => {
           <h1>Netflix</h1>
         </Link>
       </div>
-      <div className="nav-links-wrapper">
-        <Link to="/home" style={{ textDecoration: "none", color: "#fff" }}>
+      <div className={`nav-links-wrapper ${menu ? "active" : ""}`}>
+        <Link
+          to="/home"
+          style={{ textDecoration: "none", color: "#fff" }}
+          onClick={() => setMenu(false)}
+        >
           Home
         </Link>
-        <Link to="/movies" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link
+          to="/movies"
+          style={{ textDecoration: "none", color: "#fff" }}
+          onClick={() => setMenu(false)}
+        >
           Movies
         </Link>
-        <Link to="/tv-shows" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link
+          to="/tv-shows"
+          style={{ textDecoration: "none", color: "#fff" }}
+          onClick={() => setMenu(false)}
+        >
           TV Shows
         </Link>
-        <Link to="/latest" style={{ textDecoration: "none", color: "#fff" }}>
+        <Link
+          to="/latest"
+          style={{ textDecoration: "none", color: "#fff" }}
+          onClick={() => setMenu(false)}
+        >
           New & Popular
         </Link>
       </div>
@@ -47,6 +67,10 @@ const Navbar = () => {
           size={20}
           className="info-dropdown-icon"
         />
+
+        <div className="hamburger-menu" onClick={() => setMenu(!menu)}>
+          {menu ? <FaTimes /> : <FaBars />}
+        </div>
       </div>
     </div>
   );
