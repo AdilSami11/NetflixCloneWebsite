@@ -53,7 +53,7 @@ const Navbar = () => {
         <IoSearch color="#fff" size={20} />
         <FaBell color="#fff" size={20} className="notification-icon" />
         <img
-          src={profile?.img}
+          src={profile?.img || "none"}
           alt="profile"
           width={30}
           height={30}
