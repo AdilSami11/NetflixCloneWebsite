@@ -42,11 +42,11 @@ const Navbar = () => {
           TV Shows
         </Link>
         <Link
-          to="/latest"
+          to="/subscriptions"
           style={{ textDecoration: "none", color: "#fff" }}
           onClick={() => setMenu(false)}
         >
-          New & Popular
+          Subsciptions
         </Link>
       </div>
       <div className="profile-info-wrapper">

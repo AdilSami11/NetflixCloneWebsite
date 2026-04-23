@@ -624,6 +624,50 @@ body {
   font-size: 1.3rem;
   color: #fff;
 }
+
+/* ****  main-subscription-wrapper **** */
+.main-subscription-wrapper {
+  padding: 100px 0;
+  /* background-color: yellow; */
+  margin-top: 70px;
+}
+.sub-title {
+  /* background-color: #e50914; */
+  padding: 0 30px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.sub-title h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+.sub-title p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.sub-plans-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px;
+  gap: 20px;
+  background-color: violet;
+}
+.sub-plan-card {
+  border-radius: 10px;
+  padding: 30px 20px;
+  border: 2px solid red;
+}
+.sub-plan-card h1 {
+  margin-bottom: 5px;
+}
+.sub-plan-card p {
+  margin-bottom: 20px;
+}
+.price-date-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @media screen and (max-width: 768px) {
   .profiles-main-wrapper {
     padding: 20px 0px;
@@ -792,10 +836,6 @@ body {
   }
 
   /* ******  shows main page styling ****** */
-  .main-tv-shows-wrapper {
-    padding: 100px 0px;
-    /* background-color: yellow; */
-  }
   .sorting-wrapper {
     padding: 0 20px;
     margin-bottom: 20px;
