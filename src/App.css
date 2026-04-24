@@ -650,15 +650,21 @@ body {
   grid-template-columns: repeat(3, 1fr);
   padding: 40px;
   gap: 20px;
-  background-color: violet;
 }
 .sub-plan-card {
-  border-radius: 10px;
-  padding: 30px 20px;
-  border: 2px solid red;
+  border-radius: 8px;
+  padding: 50px 20px;
+  cursor: pointer;
+  color: #000000;
+  background-color: #ffffffef;
 }
+/* .sub-plan-card:hover {
+  background-color: #e50914b4;
+  color: #fff;
+} */
 .sub-plan-card h1 {
   margin-bottom: 5px;
+  font-size: 1.7rem;
 }
 .sub-plan-card p {
   margin-bottom: 20px;
@@ -667,6 +673,40 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 25px;
+}
+.price-date-info h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.price-date-info h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.continue-plan-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.continue-plan-btn button {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 8px;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  border: 1px solid grey;
+}
+.continue-plan-btn button:hover {
+  background-color: #e50914;
+  color: #fff;
+  border: 1px solid #e50914;
+}
+.sub-plan-card ol li {
+  list-style: none;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 @media screen and (max-width: 768px) {
   .profiles-main-wrapper {
@@ -851,6 +891,14 @@ body {
   .tv-shows-cards-wrapper {
     margin-bottom: 40px;
   }
+
+  /* subscirption wrapper */
+  .sub-plans-card-wrapper {
+    /* display: grid; */
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px;
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -921,5 +969,13 @@ body {
 
   .load-more-btn button {
     padding: 8px 15px;
+  }
+
+  /* subscirption wrapper */
+  .sub-plans-card-wrapper {
+    /* display: grid; */
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    gap: 25px;
   }
 }

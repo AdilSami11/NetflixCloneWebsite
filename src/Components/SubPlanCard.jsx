@@ -9,7 +9,9 @@ const SubPlanCard = ({ plan, idx }) => {
         <h2>{plan.price}</h2>
         <h4>{plan.duration}</h4>
       </div>
-      <button>Continue with {plan.name}</button>
+      <div className="continue-plan-btn">
+        <button>Continue with {plan.name}</button>
+      </div>
       <ol>
         <li>Quality : {plan.quality}</li>
         <li>Screens : {plan.screens}</li>
