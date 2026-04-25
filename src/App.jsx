@@ -7,6 +7,8 @@ import MoviesDetailsPage from "./Pages/MoviesDetailsPage";
 import TvShowPage from "./Pages/TvShowsPage";
 import TvShowDetailPage from "./Pages/TvShowDetailPage";
 import SubscriptionPage from "./Pages/SubscriptionPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
@@ -22,6 +24,8 @@ function App() {
         //Subscription-Page Route:
         <Route path="/subscriptions" element={<SubscriptionPage />} />
       </Routes>
+      // toast Container
+      <ToastContainer />
     </>
   );
 }

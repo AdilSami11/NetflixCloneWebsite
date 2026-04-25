@@ -1,8 +1,8 @@
 import React from "react";
 
-const SubPlanCard = ({ plan, idx }) => {
+const SubPlanCard = ({ plan, idx, isSelected, subscribeHandler }) => {
   return (
-    <div className="sub-plan-card" key={idx}>
+    <div className={`sub-plan-card ${isSelected ? "active" : ""}`} key={idx}>
       <h1>{plan.name}</h1>
       <p>{plan.ads}</p>
       <div className="price-date-info">
@@ -10,7 +10,10 @@ const SubPlanCard = ({ plan, idx }) => {
         <h4>{plan.duration}</h4>
       </div>
       <div className="continue-plan-btn">
-        <button>Continue with {plan.name}</button>
+        <button onClick={() => subscribeHandler(plan)}>
+          {/* Continue with {plan.name} */}
+          {isSelected ? "Selected" : "Subscribe"}
+        </button>
       </div>
       <ol>
         <li>Quality : {plan.quality}</li>

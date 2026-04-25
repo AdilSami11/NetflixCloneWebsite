@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import SubPlanCard from "../Components/SubPlanCard";
+import { toast } from "react-toastify";
 const SubscriptionPage = () => {
+  // state to hold / store selected plan:
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  // handler for Selected Plan:
+
+  const handleSubscribe = (plan) => {
+    setSelectedPlan(plan.name);
+    toast.success(`Subscribed to ${plan.name} Plan 🎉`, {
+      position: "top-right",
+      autoClose: 3000,
+    });
+  };
+
   // plans Data:
 
   const plans = [
@@ -47,7 +61,12 @@ const SubscriptionPage = () => {
         <div className="container">
           <div className="sub-plans-card-wrapper">
             {plans.map((plan, idx) => (
-              <SubPlanCard plan={plan} id={idx} />
+              <SubPlanCard
+                plan={plan}
+                id={idx}
+                isSelected={selectedPlan === plan.name}
+                subscribeHandler={handleSubscribe}
+              />
             ))}
           </div>
         </div>
