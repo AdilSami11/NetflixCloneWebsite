@@ -906,6 +906,19 @@ body {
 }
 
 @media screen and (max-width: 380px) {
+  .navbar-wrapper {
+    padding: 0 10px;
+  }
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  .profile-pic {
+    width: 25px;
+    height: 25px;
+  }
+  .hamburger-menu {
+    font-size: 1.4rem;
+  }
   .profiles-main-wrapper {
     padding: 70px 0px;
   }
@@ -933,21 +946,33 @@ body {
   .main-banner-wrapper {
     min-height: 70vh;
   }
+  .main-banner-wrapper::before {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 30%,
+      rgba(0, 0, 0, 0.4) 100%,
+      transparent 100%
+    );
+  }
   .movies_row_wrapper {
     margin-left: 0px;
+  }
+  .movies_row_wrapper img {
+    max-width: 170px;
   }
 
   .banner-content {
     max-width: 350px;
     padding: 0 5px;
-    margin-left: 10px;
+    margin-left: 5px;
+    /* background-color: yellowgreen; */
   }
   .banner-content h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
   }
   .banner-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 20px;
   }
 
@@ -955,27 +980,99 @@ body {
     gap: 20px;
   }
   .banner-btns button {
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 15px;
     font-weight: 600;
   }
+  .banner-btns button:nth-child(2) {
+    background-color: #494949c2;
+    color: #fff;
+  }
+
   .movies--page--title h2 {
     font-size: 1.7rem;
     margin-left: 60px;
     font-weight: 400;
   }
   .movies-cards-wrapper {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   .movies-cards-wrapper img {
-    max-width: 260px;
+    max-width: 230px;
   }
 
   .load-more-btn button {
     padding: 8px 15px;
   }
 
-  /* subscirption wrapper */
+  .movie-img-wrapper::before {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 30%,
+      rgba(0, 0, 0, 0.4) 100%,
+      transparent 100%
+    );
+  }
+
+  .movie--banner--details h2 {
+    font-size: 1.6rem;
+  }
+  .movie--banner--details p {
+    font-size: 1rem;
+  }
+
+  .action--btns button {
+    padding: 6px 15px;
+    font-weight: 400;
+  }
+  .movie--banner--details {
+    margin-left: 10px;
+    max-width: 500px;
+  }
+  /*  ****** movie info strip ****** */
+
+  .about-movie-info {
+    padding: 30px 0;
+  }
+  .about-movie-info p {
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
+  /* ******  poster info wrapper styling ******  */
+
+  /* .poster-detail-wrap {
+    background-color: yellow;
+    padding: 0px 10px;
+  } */
+  .poster-img-wrap {
+    max-width: 200px;
+  }
+
+  .name__rating_wrap h2 {
+    font-size: 1.7rem;
+  }
+  .review-stars {
+    font-size: 1.6rem;
+  }
+  .show-overview {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .status {
+    font-size: 1.1rem;
+  }
+  .seasons,
+  .episodes {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  .creator {
+    font-size: 1.1rem;
+  }
+
+  /* ****************  subscirption wrapper ********************* */
   .sub-plans-card-wrapper {
     /* display: grid; */
     grid-template-columns: repeat(1, 1fr);
